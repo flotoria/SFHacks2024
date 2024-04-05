@@ -1,15 +1,17 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import index from './pages/index'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="text-white">
-      asdasdsad
-    </div>
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" Component={index}/>
+        </Routes>
+    </BrowserRouter>
   )
 }
 
