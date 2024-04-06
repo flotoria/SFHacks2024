@@ -5,8 +5,11 @@ import RentCard from '../components/RentCard';
 import RentOutForm from '../pages/RentOutForm'; // Make sure this path is correct
 import { useNavigate } from 'react-router-dom';
 import { doSignOut } from '../firebase/auth';
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { db } from '../firebase/firebase';
 
 const Dashboard = () => {
+  const [rentals, setRentals] = useState<any[]>([]);
   const [showContent, setShowContent] = useState('cards');
   const navigate = useNavigate();
 
@@ -19,6 +22,16 @@ const Dashboard = () => {
   const handleDashboardClick = () => {
     setShowContent('cards');
   };
+
+  const fetchRentals = async () => {
+    const querySnapshot = await getDocs(collection(db, "rentals"));
+    const rentalsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    setRentals(rentalsData);
+  }
+   
+  useEffect(() => {
+    fetchRentals();
+  }, []);
 
   return (
     <div className='dashboard'>
@@ -42,7 +55,9 @@ const Dashboard = () => {
       </div>
       {showContent === 'cards' ? (
         <div className='rentCardContainer'>
-          <RentCard id="asd" title="asd" desc="asd"/>
+          { rentals.map((rental) => (
+            <RentCard key={rental.id} title={rental.address} desc={rental.description} imageUid={rental.imageId} />
+            )) }
           {/* Render other RentCard components as needed */}
         </div>
       ) : showContent === 'form' ? (
