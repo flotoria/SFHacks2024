@@ -1,0 +1,54 @@
+.dashboard {
+  background-color: #9AB87A;
+  height: 100vh;
+  width: 100vw;
+}
+.tab_bar {
+  width: 100vw;
+  display: flex;
+  background-color: #F8F991;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-between;
+}
+.tabBarButton {
+  width: 120px;
+  height: 50px;
+  border: 3px solid #315cfd;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1rem;
+  font-weight: 550;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 1rem;
+}
+
+.tabBarButton:hover {
+  background: #315cfd;
+  color: white;
+  font-size: 1.1rem;
+}
+.dashboard_app_name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 1.5rem;
+  color: #444B6E;
+}
+.rentCardContainer {
+  overflow-y: scroll;
+  height: 100%;
+  justify-content: 'space-evenly';
+  margin-top: 5px;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  display: flex;
+}
+
+.tabBarLeftSide {
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
