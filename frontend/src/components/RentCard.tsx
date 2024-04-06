@@ -1,17 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { getDownloadURL, ref } from 'firebase/storage';
+import { storage } from '../firebase/firebase';
 import '../css/rentCard.css'
 
 interface RentCardProps {
   id: string;
   title: string;
   desc: string;
-
+  imageUid: string;
 }
 
-const RentCard = ({id, title, desc}: RentCardProps) => {
+const RentCard = ({id, title, desc, imageUid}: RentCardProps) => {
+
+  const [imageURL, setImageURL] = useState('');
+  useEffect(() => {
+    const imageRef = ref(storage, `images/${imageUid}`);
+   
+
+    getDownloadURL(imageRef)
+      .then((url) => {
+        setImageURL(url);
+        
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  
+  }, []);
   return (
     <div className="card">
- <div className="image"></div>
+ <div className="image overflow-hidden">
+  <img src={imageURL}></img>
+ </div>
   <div className="content">
     <a href="#">
       <span className="title">

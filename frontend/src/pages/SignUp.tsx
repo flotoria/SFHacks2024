@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/auth.css';
+import { db } from '../firebase/firebase';
 import { doCreateWithEmailAndPassword } from '../firebase/auth'
-
+import { collection, addDoc } from "firebase/firestore";
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -20,7 +21,12 @@ const SignUp = () => {
         setError(true);
         return;
       }
-      await doCreateWithEmailAndPassword(email, password);
+      const userCredential = await doCreateWithEmailAndPassword(email, password);
+      const uid = userCredential.user.uid;
+      const docRef = await addDoc(collection(db, "users"), {
+        id: uid,
+        email: email    
+      });
       navigate("/");
     }
     catch {
