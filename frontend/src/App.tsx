@@ -8,9 +8,10 @@ import Dashboard from '../../frontend/src/pages/Dashboard.jsx'
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
+      {/* <Routes>
           <Route path="/" Component={index}/>
-        </Routes>
+        </Routes> */}
+        <Dashboard/>
     </BrowserRouter>
   )
 }
