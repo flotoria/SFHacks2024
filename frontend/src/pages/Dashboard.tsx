@@ -36,22 +36,8 @@ const Dashboard = () => {
           </div>
       </div>
       <div className='rentCardContainer'>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
-          <RentCard/>
+          <RentCard id={0} title="test" desc="test test test set  testes"/>
+    
       </div>
 
     </div>

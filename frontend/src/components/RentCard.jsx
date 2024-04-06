@@ -1,19 +1,19 @@
 import React from 'react'
 import '../css/rentCard.css'
-const RentCard = () => {
+
+const RentCard = ({id, title, desc}) => {
   return (
     <div class="card">
  <div class="image"></div>
   <div class="content">
     <a href="#">
       <span class="title">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        {title}
       </span>
     </a>
 
     <p class="desc">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-      dolores, possimus pariatur animi temporibus nesciunt praesentium 
+      {desc}
     </p>
 
     <a class="action" href="#">
