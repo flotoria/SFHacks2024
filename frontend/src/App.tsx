@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard'
 import MyListing from '../src/pages/MyListing'
 import RentOutForm from './pages/RentOutForm';
 import Layout from './components/Layout';
+import FindOutMore from './pages/FindOutMore';
 function App() {
   return (
     <AuthProvider>
@@ -21,6 +22,7 @@ function App() {
             <Route path="/inbox" element={<Inbox />} />
             <Route path="/mylistings" element={<MyListing/>} />
             <Route path="/rentout" element={<RentOutForm/>} />
+            <Route path="/findoutmore" element={<FindOutMore/>} />
           </Route>
         </Routes>
       </BrowserRouter> 

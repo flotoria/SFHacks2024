@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { getDownloadURL, ref } from 'firebase/storage';
 import { storage } from '../firebase/firebase';
-import '../css/rentCard.css'
+import '../css/rentCard.css';
+import { useNavigate } from 'react-router-dom';
 
 interface RentCardProps {
   id: string;
@@ -11,7 +12,7 @@ interface RentCardProps {
 }
 
 const RentCard = ({id, title, desc, imageUid}: RentCardProps) => {
-
+  const navigate = useNavigate();
   const [imageURL, setImageURL] = useState('');
   useEffect(() => {
     const imageRef = ref(storage, `images/${imageUid}`);
@@ -43,7 +44,7 @@ const RentCard = ({id, title, desc, imageUid}: RentCardProps) => {
       {desc}
     </p>
 
-    <a className="action" href="#">
+    <a className="action" onClick={() => navigate("/findoutmore")}>
       Find out more
       <span aria-hidden="true">
         →

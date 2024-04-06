@@ -1,6 +1,6 @@
 .container {
-  width: 100vw;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .tab_bar {
@@ -9,7 +9,7 @@
   width: 100vw;
   display: flex;
   background-color: #F8F991;
-  height: 10%;
+  height: 80px;
   align-items: center;
   justify-content: space-between;
 }

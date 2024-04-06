@@ -1,0 +1,45 @@
+.myListingContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-grow: 10;
+  padding: 0px 100px 0px 100px;
+
+}
+.myListingContent {
+  width: 100%;
+  height: 100vh;
+}
+
+.myListingContentHeader {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.myListingContentHeaderTitle {
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+}
+.myListingContentHeaderInfo p {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.myListingContentBody {
+  background-color: white;
+  box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+  padding: 20px 0px 0px 30px;
+  height: auto;
+}
+.myListingContentBody p {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+.myListingCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+}
