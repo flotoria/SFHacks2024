@@ -27,7 +27,7 @@ const SignUp = () => {
         id: uid,
         email: email    
       });
-      navigate("/");
+      navigate("/login");
     }
     catch {
       setError(true)

@@ -1,6 +1,7 @@
 .inbox {
   height: 100vh;
   display: grid;
+  width: 100vw;
   grid-template-columns: 20vw auto;
 }
 

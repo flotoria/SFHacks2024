@@ -14,7 +14,7 @@ function HomePage() {
         try {
           const response = await doSignInWithEmailAndPassword(email, password);
           console.log(response)
-          navigate("/dashboard");
+          navigate("/");
         }
         catch {
           setError(true)
