@@ -1,19 +1,23 @@
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import index from './pages/index'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Dashboard from '../../frontend/src/pages/Dashboard.jsx'
+
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import './App.css';
+import { AuthProvider } from './contexts/authContext/authContext';
+import HomePage from './pages/Login';
+import SignUp from './pages/SignUp'
+
+
 function App() {
   return (
-    <BrowserRouter>
-      {/* <Routes>
-          <Route path="/" Component={index}/>
-        </Routes> */}
-        <Dashboard/>
-    </BrowserRouter>
-  )
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

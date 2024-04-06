@@ -32,7 +32,7 @@
     justify-content: center;
     min-height: calc(100vh - 60px);
     padding: 20px;
-    background: url('./assets/house.jpg') no-repeat center center fixed; 
+    background: url('../assets/house.jpg') no-repeat center center fixed; 
     background-size: cover;
   }
   
