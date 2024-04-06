@@ -1,47 +1,56 @@
-import React, {useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaHouse } from "react-icons/fa6";
-import '../css/dashboard.css'
+import '../css/dashboard.css';
 import RentCard from '../components/RentCard';
-import { useAuth } from "../contexts/authContext/authContext"
-import { doSignOut } from '../firebase/auth'
+import RentOutForm from '../pages/RentOutForm'; // Make sure this path is correct
 import { useNavigate } from 'react-router-dom';
-
+import { doSignOut } from '../firebase/auth';
 
 const Dashboard = () => {
-  const value = useAuth();
+  const [showContent, setShowContent] = useState('cards');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(value);
-  }, [])
+  // Function to show the RentOutForm
+  const handleRentOutClick = () => {
+    setShowContent('form');
+  };
+
+  // Function to return to the dashboard cards view
+  const handleDashboardClick = () => {
+    setShowContent('cards');
+  };
 
   return (
     <div className='dashboard'>
       <div className='tab_bar'>
-          <div className='tabBarLeftSide'>
-            <FaHouse size={30} color='#444B6E'/>
-            <p className='dashboard_app_name'>House Share</p>
-          </div>
-          <div>
-            <button className='tabBarButton'>Dashboard</button>
-            <button className='tabBarButton' onClick={() => {
+        <div className='tabBarLeftSide'>
+          <FaHouse size={30} color='#444B6E'/>
+          <p className='dashboard_app_name'>House Share</p>
+        </div>
+        <div>
+          <button className='tabBarButton' onClick={handleDashboardClick}>Dashboard</button>
+          <button className='tabBarButton' onClick={() => {
               navigate("/inbox");
             }} >Inbox</button>
-            <button className='tabBarButton'>Rent out</button>
-            <button className='tabBarButton'>My listings</button>
-            <button className='tabBarButton' onClick={() => { 
+          <button className='tabBarButton' onClick={handleRentOutClick}>Rent out</button>
+          <button className='tabBarButton'>My listings</button>
+          <button className='tabBarButton' onClick={() => { 
               doSignOut();
               navigate("/");
              } }>Sign out</button>
-          </div>
+        </div>
       </div>
-      <div className='rentCardContainer'>
-          <RentCard id={0} title="test" desc="test test test set  testes"/>
-    
-      </div>
+      {showContent === 'cards' ? (
+        <div className='rentCardContainer'>
+          <RentCard id="asd" title="asd" desc="asd"/>
+          {/* Render other RentCard components as needed */}
+        </div>
+      ) : showContent === 'form' ? (
+        <RentOutForm  />
+      ) : null}
 
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
