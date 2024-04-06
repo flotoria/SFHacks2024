@@ -1,8 +1,20 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { FaHouse } from "react-icons/fa6";
 import '../css/dashboard.css'
 import RentCard from '../components/RentCard';
+import { useAuth } from "../contexts/authContext/authContext"
+import { doSignOut } from '../firebase/auth'
+import { useNavigate } from 'react-router-dom';
+
+
 const Dashboard = () => {
+  const value = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(value);
+  }, [])
+
   return (
     <div className='dashboard'>
       <div className='tab_bar'>
@@ -12,10 +24,15 @@ const Dashboard = () => {
           </div>
           <div>
             <button className='tabBarButton'>Dashboard</button>
-            <button className='tabBarButton'>Inbox</button>
+            <button className='tabBarButton' onClick={() => {
+              navigate("/inbox");
+            }} >Inbox</button>
             <button className='tabBarButton'>Rent out</button>
             <button className='tabBarButton'>My listings</button>
-            <button className='tabBarButton'>Sign out</button>
+            <button className='tabBarButton' onClick={() => { 
+              doSignOut();
+              navigate("/");
+             } }>Sign out</button>
           </div>
       </div>
       <div className='rentCardContainer'>
