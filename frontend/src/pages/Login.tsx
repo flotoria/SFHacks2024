@@ -41,7 +41,7 @@ function HomePage() {
   
               <button type="submit">Login</button>
               <p className="sign-up">
-                New to houseShare? <Link to="/signup">Create an account</Link>
+                New to houseShare? <Link to="/SignUp">Create an account</Link>
               </p>
             </form>
           </div>
