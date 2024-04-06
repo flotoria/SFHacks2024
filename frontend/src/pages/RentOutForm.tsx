@@ -31,7 +31,7 @@ const RentOutForm = () => {
         </div>
         <div className="formGroup">
           <label htmlFor="description">Description</label>
-          <textarea id="description" placeholder="Describe the property" rows="4"></textarea>
+          <textarea id="description" placeholder="Describe the property" rows={4}></textarea>
         </div>
         <div className="formGroup">
           <label htmlFor="images">Add Photos</label>
