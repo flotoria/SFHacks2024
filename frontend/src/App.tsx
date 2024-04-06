@@ -5,6 +5,7 @@ import './App.css';
 import { AuthProvider } from './contexts/authContext/authContext';
 import HomePage from './pages/Login';
 import SignUp from './pages/SignUp'
+import Dashboard from './pages/Dashboard.tsx';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
