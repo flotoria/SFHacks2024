@@ -38,7 +38,7 @@ const MyListing = () => {
           <p>Posts</p>
           <div className='myListingCardContainer'>
             {rentals.map((rental) => (
-              <MyListingCard key={rental.id} title={rental.address} desc={rental.description} price={rental.price} imageUid={rental.imageId} />
+              <MyListingCard key={rental.id} title={rental.address} desc={rental.description} price={rental.rentPrice} imageUid={rental.imageId} />
             ))}
           </div>
 

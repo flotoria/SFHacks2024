@@ -9,9 +9,16 @@ interface RentCardProps {
   title: string;
   desc: string;
   imageUid: string;
+  email: string, 
+  city: string,
+  address: string,
+  userId: string,
+  zipCode: string,
+  country: string,
+  rentPrice: string,
 }
 
-const RentCard = ({id, title, desc, imageUid}: RentCardProps) => {
+const RentCard = ({id, title, desc, imageUid, email, city, address, userId, zipCode, country, rentPrice}: RentCardProps) => {
   const navigate = useNavigate();
   const [imageURL, setImageURL] = useState('');
   useEffect(() => {
@@ -44,7 +51,7 @@ const RentCard = ({id, title, desc, imageUid}: RentCardProps) => {
       {desc}
     </p>
 
-    <a className="action" onClick={() => navigate("/findoutmore")}>
+    <a className="action" onClick={() => navigate("/findoutmore", {state: {id: id.toString(), title: title, desc: desc, imageURL: imageURL, city, email, address, userId, zipCode, country, rentPrice }})}>
       Find out more
       <span aria-hidden="true">
         →

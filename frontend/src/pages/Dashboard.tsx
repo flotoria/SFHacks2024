@@ -18,7 +18,7 @@ const Dashboard = () => {
     <div className='dashboard'>
         <div className='rentCardContainer'>
           {rentals.map((rental) => (
-              <RentCard key={rental.id} id={rental.id} title={rental.address} desc={rental.description} imageUid={rental.imageId}/>
+              <RentCard key={rental.id} id={rental.id} title={rental.address} desc={rental.description} imageUid={rental.imageId} address={rental.address} city={rental.city} country={rental.country} email={rental.email} userId={rental.userId} zipCode={rental.zipCode} rentPrice={rental.rentPrice} />
             ))}
         </div>
     </div>
