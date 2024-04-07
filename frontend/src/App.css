@@ -106,3 +106,13 @@
     color: #0056b3; /* Darker blue */
   }
   
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  body {
+    background-color: #9AB87A; /* Keep your body background color */
+  }
