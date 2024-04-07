@@ -31,7 +31,7 @@ const RentCard = ({id, title, desc, imageUid}: RentCardProps) => {
   return (
     <div className="card">
  <div className="image overflow-hidden">
-  <img src={imageURL}></img>
+  <img src={imageURL} className="object-cover"></img>
  </div>
   <div className="content">
     <a href="#">
