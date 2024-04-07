@@ -10,6 +10,7 @@ import MyListing from './pages/MyListing';
 import RentOutForm from './pages/RentOutForm';
 import Layout from './components/Layout';
 import AboutUs from './pages/AboutUs'; 
+import FindOutMore from './pages/FindOutMore';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
             <Route path="mylistings" element={<MyListing />} />
             <Route path="rentout" element={<RentOutForm />} />
             <Route path="about" element={<AboutUs />} /> {/* Add this line */}
+            <Route path="/inbox" element={<Inbox />} />
+            <Route path="/mylistings" element={<MyListing/>} />
+            <Route path="/rentout" element={<RentOutForm/>} />
+            <Route path="/findoutmore" element={<FindOutMore/>} />
           </Route>
         </Routes>
       </BrowserRouter>
