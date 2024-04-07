@@ -1,3 +1,15 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+  max-width: 100%; /* Prevents overflow caused by vertical scrollbars */
+  height: 100vh;
+  /* Rest of your styles */
+}
+
 .container {
   margin: 0;
   padding: 0;
@@ -56,3 +68,21 @@
   align-items: center;
   padding-left: 2rem;
 }
+
+.dashboard_app_name {
+  font-size: 1.5rem; /* Increased font size for more prominence */
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 1rem; /* Adjusted margin to accommodate the logo */
+  color: #444B6E;
+  font-family: 'Poppins', sans-serif; /* Change to a more sophisticated font */
+  text-shadow: 1px 1px #888; /* Subtle shadow for depth */
+}
+
+.logo_image {
+  width: 60px; 
+  height: auto; 
+  margin-left: 15px; 
+  margin-right: 10px; 
+}
+
